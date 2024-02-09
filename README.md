@@ -167,7 +167,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
-5. Аналогичным образом создаю ВМ Kibana через [ansible-playbook-kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-kibana.yml). В [kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/kibana.yml) выставляю внутренний (internal) ip `elasticsearch.hosts=http://192.168.20.6:9200`
+5. Аналогичным образом создаю ВМ Kibana через [ansible-playbook-kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-kibana.yml). В [kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/kibana.yml) выставляю внутренний (internal) ip `elasticsearch.hosts=["http://192.168.20.6:9200"]`
 
 
 
