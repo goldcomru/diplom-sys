@@ -114,7 +114,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 Ход выполнения задания:
 
-1. Создаю VPC, внешней и внутренних подсетей, Bastion хоста на базе NAT_instance, статичной маршрутизации через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
+1. Создаю VPC, внешнюю и внутреннюю подсеть, Bastion хост на базе NAT_instance, статичную маршрутизацию через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/%D0%9F%D0%BE%D0%B4%D1%81%D0%B5%D1%82%D0%B8.png)
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/bastion.png)
@@ -160,9 +160,9 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
+4. Создаю ВМ Elasticsearch,
 
-
-
+----
 
 
 
