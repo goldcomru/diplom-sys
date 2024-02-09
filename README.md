@@ -118,6 +118,9 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 1. Создаю VPC, внешней и внутренней подсетей, Bastion хоста на базе NAT_instance, статичной маршрутизации через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
 
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/123.md)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/bastion.png)
+
 ----
 
 2. Создаю 2 web с, таргет и бэкэнд группами, http роутером и балансировщиком в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible.
