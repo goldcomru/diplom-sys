@@ -1,0 +1,42 @@
+---
+- name: Zabbix agent
+  hosts: nginx
+  become: yes
+
+  tasks:
+  
+  - name: Repo
+    get_url:
+      url: 'https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+      dest: '/home/popov/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+
+  - name: Dpkg zabbix
+    apt:  
+      deb: '/home/popov/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+      
+  - name: Update 
+    apt:
+      update_cache: yes
+      
+  - name: Install zabbix-agent
+    apt:  
+      name: zabbix-agent
+      state: present
+      
+  - name: Stop zabbix-agent
+    service:
+      name: zabbix-agent.service
+      state: stopped
+      
+  - name: Conf file (with ip zabbix-server)
+    copy:
+      src: /home/popov/ansible/zabbix_agentd.conf
+      dest: /etc/zabbix/zabbix_agentd.conf
+      owner: popov
+      group: popov      
+
+  - name: Start zabbix-agent
+    service:
+      name: zabbix-agent.service
+      state: started
+  

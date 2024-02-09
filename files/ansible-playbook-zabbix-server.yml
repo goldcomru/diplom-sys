@@ -1,0 +1,57 @@
+---
+- name: Zabbix server
+  hosts: zabbix-server
+  become: yes
+
+  tasks:
+  
+  - name: Repo
+    get_url:
+      url: 'https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+      dest: '/home/popov/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+
+  - name: Dpkg zabbix
+    apt:  
+      deb: '/home/popov/zabbix-release_6.0-4+ubuntu20.04_all.deb'
+
+  - name: Update 
+    apt:
+      update_cache: yes
+      
+  - name: Install server
+    apt:  
+      name: zabbix-server-pgsql
+      state: present   
+
+  - name: Install frontend
+    apt:  
+      name: zabbix-frontend-php
+      state: present   
+      
+  - name: PHP
+    apt:  
+      name: php7.4-pgsql
+      state: present         
+      
+  - name: Install apache
+    apt:  
+      name: apache2
+      state: present   
+      
+  - name: Install zabbix-apach-conf
+    apt:  
+      name: zabbix-apache-conf
+      state: present
+
+  - name: Install zabbix-sql
+    apt:  
+      name: zabbix-sql-scripts
+      state: present      
+      
+  - name: Install zabbix-agent
+    apt:  
+      name: zabbix-agent
+      state: present
+
+
+      
