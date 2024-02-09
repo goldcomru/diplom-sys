@@ -193,6 +193,8 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 # Заключение
 
+В финале открываю единственный доступный входящий порт 22 для Bastion host.
+
 Согласно требованиям, web сервера и elasticsearch во время развёртки были помещены во внутреннюю подсеть. Сервера Zabbix, Kibana, балансировщика и Bastion host во время развёртки были помещены в публичную подсеть:
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/%D0%BE%D0%B1%D1%89%D0%B5%D0%B51.png)
@@ -200,6 +202,17 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 Группы безопасности также настроены согласно требованиям:
 
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gs1.png)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gs2.png)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gs3.png)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gs4.png)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gs5.png)
+
+Сервисы доступны по ссылкам:
+
+Web сервера: http://158.160.133.41/
+Zabbix-server: http://158.160.107.161/zabbix
+Kibana: http://158.160.99.208:5601/
 
 
 
