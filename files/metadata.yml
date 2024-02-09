@@ -1,0 +1,9 @@
+#cloud-config
+users:
+  - name: popov
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh_authorized_keys:
+      - ssh-rsa AAGIR9mOJQGdCx.............. popov@bastion
+
