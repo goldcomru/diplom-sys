@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web-страница Nginx</title>
+  <style>
+    body {
+      display: flex-direction;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Эта страничка для дипломной работы Попов А.В.</h1>
+<img src="https://media.tenor.com/qBFyLXDG2u4AAAAM/okay.gif">
+<h2><font size=»5"<p>Значит Nginx работает</p></font></h2>
+</body>
+</html>

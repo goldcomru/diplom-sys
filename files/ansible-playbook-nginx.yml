@@ -1,0 +1,23 @@
+---
+- name: Connection
+  hosts: nginx
+  become: yes
+
+  tasks:
+
+  - name: Update apt
+    apt:
+      update_cache: yes
+
+  - name: Install nginx
+    apt:  
+      name: nginx 
+      state: latest
+
+  - name: Main page
+    copy:
+      src: /home/popov/ansible/index.nginx-debian.html
+      dest: /var/www/html/index.nginx-debian.html
+      owner: popov
+      group: popov
+      
