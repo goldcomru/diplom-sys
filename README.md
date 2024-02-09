@@ -137,13 +137,20 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 ![image]()
-3. Создаю вм zabbix через [zabbix.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix.tf). На bastion через плейбук [ansible-playbook-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml) запускаю установку zabbix-server 6.0 на ubuntu 20.04.
+
+3. Создаю ВМ zabbix через [zabbix.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix.tf). На bastion через плейбук [ansible-playbook-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml) запускаю установку zabbix-server 6.0 на ubuntu 20.04.
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/zabbixserver1.png)
 
 На этом этапе у меня возникла проблема с установкой PostgreSQL 13.0 через плейбук, пришлось подключаться к ВМ через SSH и ставить вручную. 
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/psql.png)
+
+Когда сервер был запущен и доступен, запустил [ansible-playbook-zabbix-agent.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-agent.yml) поменяв в файле [zabbix_agentd.conf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix_agentd.conf) на внутренний ip сервера значение Server=192.168.10.10
+
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/zabbixagent1.png)
+
+
 
 ----
 
