@@ -123,7 +123,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
-2. Создаю 2 web с, таргет и бэкэнд группами, http роутером и балансировщиком в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible.
+2. Создаю 2 web сервера,таргет и бэкэнд группы, http роутер и балансировщик в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible.
 Создаю [ansible-playbook-nginx.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-nginx.yml) и [index.nginx-debian.html](https://github.com/goldcomru/diplom-sys/blob/main/files/index.nginx-debian.html). Правлю файл [hosts](https://github.com/goldcomru/diplom-sys/blob/main/files/hosts) в /etc/ansible/hosts используя FQDN имена.
 
 ----
