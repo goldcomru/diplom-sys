@@ -136,7 +136,6 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/nginx3.png)
 
 ----
-![image]()
 
 3. Создаю ВМ zabbix через [zabbix.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix.tf). На bastion через плейбук [ansible-playbook-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml) запускаю установку zabbix-server 6.0 на ubuntu 20.04.
 
@@ -161,15 +160,17 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ----
 
 4. Создаю ВМ Elasticsearch через [ansible-playbook-elastic.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-elastic.yml). В [elasticsearch.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/elasticsearch.yml) выставляю имя кластера 'popov-diplom'.
+
 По команде `curl localhost:9200/_cluster/health?pretty` проверяю работоспособность.
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health.png)
 
 ----
-
+![image]()
 5. Аналогичным образом создаю ВМ Kibana через [ansible-playbook-kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-kibana.yml). В [kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/kibana.yml) выставляю внутренний (internal) ip `elasticsearch.hosts=["http://192.168.20.6:9200"]`
 
+В консоли Kibana `http://158.160.99.208:5601/app/dev_tools#/console` по команде `GET /_cluster/health?pretty` проверяю работоспособность.
 
-
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health2.png)
 
 ----
