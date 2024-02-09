@@ -161,7 +161,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ----
 
 4. Создаю ВМ Elasticsearch через [ansible-playbook-elastic.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-elastic.yml). В [elasticsearch.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/elasticsearch.yml) выставляю имя кластера 'popov-diplom'.
-По команде 'curl localhost:9200/_cluster/health?pretty' проверяю работоспособность.
+По команде `curl localhost:9200/_cluster/health?pretty` проверяю работоспособность.
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health.png)
 
