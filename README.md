@@ -114,7 +114,6 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 
 Ход выполнения задания:
-![image]()
 
 1. Создаю VPC, внешней и внутренних подсетей, Bastion хоста на базе NAT_instance, статичной маршрутизации через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
 
@@ -134,10 +133,9 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/nginx2.png)
 
 Проверяю доступность web серверов командой 
-
+![image]()
 `curl -v 158.160.133.41:80`
-
-
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/nginx3.png)
 
 ----
 
