@@ -175,7 +175,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
-6. Абсолютно аналогичным образом загружаю агентов filebeat на все хосты через [ansible-playbook-filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-filebeat.yml). В [filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/filebeat.yml) выставляю Kibana внутренний (internal) ip `host: "192.168.10.18:5601"`, Elasticsearch `output.elasticsearch: hosts: ["192.168.20.6:9200"]`. Также прописываю пути ко всем необходимым логам на всех сервисах.
+6. Абсолютно аналогичным образом загружаю агентов filebeat на все хосты через [ansible-playbook-filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-filebeat.yml). В [filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/filebeat.yml) выставляю Kibana внутренний (internal) ip `host: "192.168.10.18:5601"`, Elasticsearch `output.elasticsearch: hosts: ["192.168.20.6:9200"]`. Также прописываю пути ко всем логам на всех сервисах.
 
 ![image]()
 
