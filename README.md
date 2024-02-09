@@ -109,7 +109,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 # Выполнение работы
 
 Все файлы (плейбуки, конфиг файлы, дата файл, хосты) для выполнения работы хранятся в папке `files`.   
-  
+Все конфигурационные файлы загружались через ansible-playbook соответствующего сервиса.
 Группы безопасности создавались на каждом этапе, однако окончательные настройки портов выдавались после создания всей инфраструктуры через `terraform apply` соответствующего сервиса.
 
 Ход выполнения задания:
@@ -166,7 +166,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health.png)
 
 ----
-![image]()
+
 5. Аналогичным образом создаю ВМ Kibana через [ansible-playbook-kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-kibana.yml). В [kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/kibana.yml) выставляю внутренний (internal) ip `elasticsearch.hosts=["http://192.168.20.6:9200"]`
 
 В консоли Kibana `http://158.160.99.208:5601/app/dev_tools#/console` по команде `GET /_cluster/health?pretty` проверяю работоспособность.
@@ -184,3 +184,10 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gdekibana.png)
 
 ----
+
+7. Разворачиваю Snapshot через [snapshot.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/snapshot.tf). Все снимки дисков ВМ запланированы на ежедневное копирование в течение недели.
+
+![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/snapshot.png)
+
+----
+
