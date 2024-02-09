@@ -116,11 +116,11 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 Ход выполнения задания:
 
 
-1. Создание VPC, внешней и внутренней подсетей, Bastion хоста на базе NAT_instance, статичной маршрутизации через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
+1. Создаю VPC, внешней и внутренней подсетей, Bastion хоста на базе NAT_instance, статичной маршрутизации через ip Bastion хоста в [bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf)
 
 ----
 
-2. Создание 2 web машин, таргет и бэкэнд групп, роутера и балансировщика в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible. Создаю [ansible-playbook-nginx.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-nginx.yml) и files/index.nginx-debian.html
+2. Создаю 2 web с, таргет и бэкэнд группами, http роутером и балансировщиком в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible. Создаю [ansible-playbook-nginx.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-nginx.yml) и [index.nginx-debian.html](https://github.com/goldcomru/diplom-sys/blob/main/files/index.nginx-debian.html). Правлю файл [hosts](https://github.com/goldcomru/diplom-sys/blob/main/files/hosts) используя FQDN имена.
 
 ----
 
