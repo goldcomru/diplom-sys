@@ -160,7 +160,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
-4. Создаю ВМ Elasticsearch,
+4. Создаю ВМ Elasticsearch через 
 
 ----
 
