@@ -1,0 +1,37 @@
+---
+- name: Elasticsearch
+  hosts: elastic
+  become: yes
+
+  tasks:
+  
+  - name: Repo
+    get_url:
+      url: 'https://mirror.yandex.ru/mirrors/elastic/7/pool/main/e/elasticsearch/elasticsearch-7.17.9-amd64.deb'
+      dest: '/home/popov/elasticsearch-7.17.9-amd64.deb'
+      
+  - name: Dpkg elastic
+    apt:
+      deb: '/home/popov/elasticsearch-7.17.9-amd64.deb'
+      
+  - name: Update 
+    apt:
+      update_cache: yes
+
+  - name: Daemon reload
+    systemd:
+      daemon_reload: true
+      name: elasticsearch.service
+      state: started
+
+  - name: Conf file
+    copy:
+      src: /home/popov/ansible/elasticsearch.yml
+      dest: /etc/elasticsearch/elasticsearch.yml
+      owner: root
+      group: elasticsearch
+      
+  - name: Restart elastic
+    systemd:
+      name: elasticsearch.service
+      state: restarted
