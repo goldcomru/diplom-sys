@@ -120,7 +120,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ----
 
-2. Создание 2 web машин, таргет и бэкэнд групп, роутера и балансировщика. Далее
+2. Создание 2 web машин, таргет и бэкэнд групп, роутера и балансировщика в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible. Создаю [ansible-playbook-nginx.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-nginx.yml) и files/index.nginx-debian.html
 
 ----
 
