@@ -128,7 +128,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 </details>
 
-***
+----
 
 Создаю 2 web сервера,таргет и бэкэнд группы, http роутер и балансировщик в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). Далее по ssh подключаюсь к bastion и устанавливаю ansible.
 Создаю [ansible-playbook-nginx.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-nginx.yml) и [index.nginx-debian.html](https://github.com/goldcomru/diplom-sys/blob/main/files/index.nginx-debian.html). Правлю файл [hosts](https://github.com/goldcomru/diplom-sys/blob/main/files/hosts) в /etc/ansible/hosts используя FQDN имена. Также правлю ansible.cfg поменяв `forks=10` и `host_key_checking=false` 
@@ -155,7 +155,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
    
 </details>
 
-***
+----
 
 Создаю ВМ zabbix через [zabbix.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix.tf). На bastion через плейбук [ansible-playbook-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml) запускаю установку zabbix-server 6.0 на ubuntu 20.04.
 
