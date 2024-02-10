@@ -154,6 +154,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/nginx3.png)
    
 </details>
+
 ----
 
 3. Создаю ВМ zabbix через [zabbix.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/zabbix.tf). На bastion через плейбук [ansible-playbook-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml) запускаю установку zabbix-server 6.0 на ubuntu 20.04.
@@ -191,6 +192,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/zabbixdash3.png)
 
 </details>
+
 ----
 
 4. Создаю ВМ Elasticsearch через [ansible-playbook-elastic.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-elastic.yml). В [elasticsearch.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/elasticsearch.yml) выставляю имя кластера 'popov-diplom'.
@@ -202,6 +204,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health.png)
 
 </details>
+
 ----
 
 5. Аналогичным образом создаю ВМ Kibana через [ansible-playbook-kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-kibana.yml). В [kibana.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/kibana.yml) выставляю внутренний (internal) ip `elasticsearch.hosts=["http://192.168.20.6:9200"]`
@@ -213,10 +216,11 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/health2.png)
 
 </details>
+
 ----
 
 6. Абсолютно аналогичным образом загружаю агентов filebeat на все хосты через [ansible-playbook-filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-filebeat.yml). В [filebeat.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/filebeat.yml) выставляю Kibana внутренний (internal) ip `host: "192.168.10.18:5601"`, Elasticsearch `output.elasticsearch: hosts: ["192.168.20.6:9200"]`. Также прописываю пути ко всем логам на всех сервисах.
-7. 
+
 <details>
    
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/logs.png)
@@ -230,6 +234,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8B%20%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%B0/gdekibana.png)
 
 </details>
+
 ----
 
 7. Разворачиваю Snapshot через [snapshot.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/snapshot.tf). Все снимки дисков ВМ запланированы на ежедневное копирование в течение недели.
