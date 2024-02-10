@@ -129,7 +129,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ___
 
-Создаю 2 web сервера,таргет и бэкэнд группы, http роутер и балансировщик в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). 
+Создаю 2 web сервера, таргет и бэкэнд группы, http роутер и балансировщик в [nginx.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/nginx.tf). 
 
 <details>
    
