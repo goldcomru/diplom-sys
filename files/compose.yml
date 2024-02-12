@@ -56,14 +56,10 @@ services:
       context: .
       dockerfile: nginx.dockerfile
     depends_on: ["mysql"]
-    ports: ["80:80"]
-    networks: ["wordpress"]
+    network_mode: host
 
 
 
 volumes:
   db_data: {}
   wp_data: {}
-networks:
-  wordpress:
-    name: wordpress
