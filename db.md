@@ -26,5 +26,5 @@
 
 Пытаюсь поставить настройки в контейнер исходя из инструкции с официального сайта Zabbix через [ansible-db-command.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-db-command.yml). Однако здесь сталкиваюсь с проблемой - я не понимаю как в контейнер c базой данных нужно залить базу данных zabbix (и как можно использовать пайплайны через docker-compose exec) и как дать понять zabbix серверу где находится его база данных. В интернете ничего толкового не нашёл, прошу Вашей помощи.
 
-![image](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-db-command.yml)
+
 
