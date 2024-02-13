@@ -14,7 +14,7 @@
 
 </details>
 
-Далее запускаю на нём контейнер с Mysql [compose.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/compose.yml) через [ansible-docker.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-docker.yml)
+Далее запускаю на нём контейнер с Mysql [compose.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/compose.yml) через [ansible-db.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-db.yml)
 
 <details>
 
