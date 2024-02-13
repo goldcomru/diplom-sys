@@ -1,0 +1,28 @@
+---
+- name: DB
+  hosts: zabbix-server
+  become: yes
+
+  tasks:
+  
+  - name: GPG Docker
+    shell: sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - | sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    
+  - name: Update 
+    apt:
+      update_cache: yes    
+
+  - name: Install docker
+    apt:  
+      name: docker-ce
+      state: present   
+
+  - name: Install Docker compose
+    shell: sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+    
+    
+    
+
+
+
+      

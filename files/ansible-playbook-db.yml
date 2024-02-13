@@ -1,0 +1,27 @@
+---
+- name: DB
+  hosts: zabbix-server
+  become: yes
+
+  tasks:
+  
+  - name: Dir
+    file:
+      path: /home/popov/db
+      state: directory
+    
+  - name: Conf
+    copy:
+      src: /home/popov/ansible/compose.yml
+      dest: /home/popov/db/compose.yml
+      owner: popov
+      group: popov                     
+      
+  - name: Сhmod
+    shell: 
+      cmd: sudo chmod +x /usr/local/bin/docker-compose  
+      
+  - name: Up
+    shell: 
+      chdir: /home/popov/db 
+      cmd: sudo docker-compose up -d
