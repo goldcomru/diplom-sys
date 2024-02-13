@@ -6,10 +6,10 @@
        - db_data:/var/lib/mysql
      network_mode: host
      environment:
-       - MYSQL_ROOT_PASSWORD=12345678
+       - MYSQL_ROOT_PASSWORD=---
        - MYSQL_DATABASE=zabbix 
        - MYSQL_USER=zabbix 
-       - MYSQL_PASSWORD=12345678
+       - MYSQL_PASSWORD=---
        - MYSQL_ROOT_HOST="%"
        
  volumes:
