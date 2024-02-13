@@ -1,4 +1,4 @@
-Загружаю zabbix-server через   [ansible-zabbix-server.yml]([https://github.com/goldcomru/diplom-sys/blob/main/files/bastion.tf](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml)
+Загружаю zabbix-server через   [ansible-zabbix-server.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/ansible-playbook-zabbix-server.yml)
 
 <details>
 
