@@ -10,11 +10,6 @@
       chdir: /home/popov/db 
       cmd: sudo docker-compose exec -it db_mysql_1 mysql -uroot -p12345678 | create database zabbix character set utf8mb4 collate utf8mb4_bin;  
 
-  - name: User
-    shell: 
-      chdir: /home/popov/db 
-      cmd: sudo docker-compose exec -it db_mysql_1 mysql -uroot -p12345678 | create user zabbix@localhost identified by '12345678';
-
   - name: Privileges
     shell: 
       chdir: /home/popov/db 
