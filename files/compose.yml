@@ -6,10 +6,10 @@
      volumes:
        - db_data:/var/lib/pgsql
      environment:
-       - POSTGRES_ROOT_PASSWORD=12345678
+       - POSTGRES_ROOT_PASSWORD=------
        - POSTGRES_DATABASE=zabbix
        - POSTGRES_USER=zabbix
-       - POSTGRES_PASSWORD=12345678
+       - POSTGRES_PASSWORD=-------
        - POSTGRES_ROOT_HOST="%"
    zabbix-server:
      image: zabbix/zabbix-server-pgsql:ubuntu-6.0-latest
@@ -18,7 +18,7 @@
        - DB_SERVER_HOST=localhost
        - POSTGRES_DATABASE=zabbix
        - POSTGRES_USER=zabbix 
-       - POSTGRES_PASSWORD=12345678
+       - POSTGRES_PASSWORD=--------
      depends_on: 
        - pgsql
    zabbix-web:
@@ -28,7 +28,7 @@
        - DB_SERVER_HOST=localhost
        - POSTGRES_DATABASE=zabbix
        - POSTGRES_USER=zabbix 
-       - POSTGRES_PASSWORD=12345678 
+       - POSTGRES_PASSWORD=--------
      depends_on: 
        - zabbix-server
        - pgsql
