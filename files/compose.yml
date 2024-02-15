@@ -1,16 +1,36 @@
  version: "3"
  services:
-   mysql:
-     image: mariadb:10.6.4-focal
+   pgsql:
+     image: postgres:14-bullseye
+     network_mode: host
      volumes:
-       - db_data:/var/lib/mysql
+       - db_data:/var/lib/pgsql
+     environment:
+       - POSTGRES_ROOT_PASSWORD=12345678
+       - POSTGRES_DATABASE=zabbix
+       - POSTGRES_USER=zabbix
+       - POSTGRES_PASSWORD=12345678
+       - POSTGRES_ROOT_HOST="%"
+   zabbix-server:
+     image: zabbix/zabbix-server-pgsql:ubuntu-6.0-latest
      network_mode: host
      environment:
-       - MYSQL_ROOT_PASSWORD=---
-       - MYSQL_DATABASE=zabbix 
-       - MYSQL_USER=zabbix 
-       - MYSQL_PASSWORD=---
-       - MYSQL_ROOT_HOST="%"
-       
+       - DB_SERVER_HOST=localhost
+       - POSTGRES_DATABASE=zabbix
+       - POSTGRES_USER=zabbix 
+       - POSTGRES_PASSWORD=12345678
+     depends_on: 
+       - pgsql
+   zabbix-web:
+     image: zabbix/zabbix-web-apache-pgsql:ubuntu-6.0-latest
+     network_mode: host
+     environment:
+       - DB_SERVER_HOST=localhost
+       - POSTGRES_DATABASE=zabbix
+       - POSTGRES_USER=zabbix 
+       - POSTGRES_PASSWORD=12345678 
+     depends_on: 
+       - zabbix-server
+       - pgsql
  volumes:
    db_data: {}
