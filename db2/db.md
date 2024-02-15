@@ -4,6 +4,6 @@
    
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/db/db5.png)
 
-Успешно захожу в zabbix через ip:8080. Сервер работает
+Успешно захожу в zabbix через 62.84.126.9:8080. Сервер работает
 
 ![image](https://github.com/goldcomru/SysAdmin/blob/main/db/zabbix-docker.png)         
