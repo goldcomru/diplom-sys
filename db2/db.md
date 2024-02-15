@@ -1,11 +1,9 @@
-Успешно запускаю создание zabbix сервера
+Запускаю создание БД, zabbix сервера и веб интерфейса через [compose.yml](https://github.com/goldcomru/diplom-sys/blob/main/files/compose.yml)
 
-![image](https://github.com/goldcomru/SysAdmin/blob/main/db/1.png)
+![image](https://github.com/goldcomru/SysAdmin/blob/main/db/db4.png)
+   
+![image](https://github.com/goldcomru/SysAdmin/blob/main/db/db5.png)
 
-Но при создании с network_mode: host сервер не хочет подключаться к БД. Без этого параметра всё хорошо. В чём причина я так и не нашёл 
-         
-![image](https://github.com/goldcomru/SysAdmin/blob/main/db/2.png)
+Успешно захожу в zabbix через ip:8080
 
-Хотя все 3 контейнера в 1 сети, они продолжают не видеть друг друга в network_mode: host
-
-![image](https://github.com/goldcomru/SysAdmin/blob/main/db/3.png)         
+![image](https://github.com/goldcomru/SysAdmin/blob/main/db/zabbix-docker.png)         
